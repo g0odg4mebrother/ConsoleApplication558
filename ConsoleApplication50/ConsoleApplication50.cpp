@@ -1,8 +1,7 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 using namespace std;
 
-// Класс для хранения даты
 class Date {
 public:
     int day;
@@ -14,7 +13,6 @@ public:
     }
 };
 
-// Класс Человек
 class Human {
 private:
     string firstName;
@@ -22,16 +20,10 @@ private:
     string middleName;
     Date birthDate;
     long idNumber;
-    static int countInstances;  
+    static int countInstances;
 
 public:
-    Human(long id, const string& lName, const string& fName,
-        const string& mName, const Date& bDate)
-        : idNumber(id),
-        lastName(lName),
-        firstName(fName),
-        middleName(mName),
-        birthDate(bDate) {
+    Human(long id, const string& lName, const string& fName,const string& mName, const Date& bDate): idNumber(id),lastName(lName),firstName(fName),middleName(mName),birthDate(bDate) {
         ++countInstances;
     }
 
@@ -39,18 +31,13 @@ public:
     Human() : Human(0, "", "", "", Date()) {}
 
     // Конструктор копирования
-    Human(const Human& other)
-        : idNumber(other.idNumber),
-        lastName(other.lastName),
-        firstName(other.firstName),
-        middleName(other.middleName),
-        birthDate(other.birthDate) {
+    Human(const Human& other): idNumber(other.idNumber),lastName(other.lastName),firstName(other.firstName),middleName(other.middleName),birthDate(other.birthDate) {
         ++countInstances;
     }
 
     // Деструктор 
     ~Human() {
-        --countInstances;
+      
     }
 
     static int getInstanceCount() {
@@ -73,6 +60,7 @@ public:
 
     // Вывод информации о человеке
     void printInfo() const {
+        cout << "/*************************************/ " << endl;
         cout << "ID: " << idNumber << endl;
         cout << "Фамилия: " << lastName << endl;
         cout << "Имя: " << firstName << endl;
@@ -82,7 +70,7 @@ public:
     }
 };
 
-int Human::countInstances = 0 ; // находится в глобально
+int Human::countInstances = 0; // находится в глобально
 
 int main() {
     setlocale(LC_ALL, "");
@@ -95,7 +83,7 @@ int main() {
 
     person.printInfo();
     person2.printInfo();
-    cout << "Количество созданных объектов: " << Human::getInstanceCount() << endl;
+    cout <<"**************************************\n" <<"Количество созданных объектов: " << Human::getInstanceCount() << endl;
 
     return 0;
 }
