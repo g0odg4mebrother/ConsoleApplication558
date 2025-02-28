@@ -9,7 +9,6 @@ public:
     int month;
     int year;
 
-    // Конструктор с параметрами
     Date(int d = 1, int m = 1, int y = 1900)
         : day(d), month(m), year(y) {
     }
@@ -23,10 +22,9 @@ private:
     string middleName;
     Date birthDate;
     long idNumber;
-    static int countInstances;  // Счетчик экземпляров
+    static int countInstances;  
 
 public:
-    // Конструктор с параметрами
     Human(long id, const string& lName, const string& fName,
         const string& mName, const Date& bDate)
         : idNumber(id),
@@ -84,7 +82,7 @@ public:
     }
 };
 
-int Human::countInstances = 0 ;
+int Human::countInstances = 0 ; // находится в глобально
 
 int main() {
     setlocale(LC_ALL, "");
@@ -93,7 +91,7 @@ int main() {
     Date birthDate2(11, 4, 1996);
 
     Human person(1, "Иванов", "Иван", "Иванович", birthDate);
-    Human person2(2, "Иванов", "Иван", "Иванович", birthDate2);
+    Human person2(2, "Баянов", "Алексей", "Александрович", birthDate2);
 
     person.printInfo();
     person2.printInfo();
