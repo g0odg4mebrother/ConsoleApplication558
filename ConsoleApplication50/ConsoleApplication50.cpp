@@ -24,7 +24,6 @@ private:
 
 public:
     Human(long id, const string& lName, const string& fName,const string& mName, const Date& bDate): idNumber(id),lastName(lName),firstName(fName),middleName(mName),birthDate(bDate) {
-        ++countInstances;
     }
 
     // Конструктор по умолчанию
