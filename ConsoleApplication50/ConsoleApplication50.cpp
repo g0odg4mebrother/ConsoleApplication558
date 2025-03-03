@@ -20,7 +20,7 @@ private:
     string middleName;
     Date birthDate;
     long idNumber;
-    static int countInstances;
+
 
 public:
     Human(long id, const string& lName, const string& fName,const string& mName, const Date& bDate): idNumber(id),lastName(lName),firstName(fName),middleName(mName),birthDate(bDate) {
@@ -40,9 +40,6 @@ public:
       
     }
 
-    static int getInstanceCount() {
-        return countInstances;
-    }
 
     // Геттеры
     long getIdNumber() const { return idNumber; }
@@ -69,8 +66,6 @@ public:
         cout << birthDate.day << "." << birthDate.month << "." << birthDate.year << endl;
     }
 };
-
-int Human::countInstances = 0; // находится в глобально
 
 int main() {
     setlocale(LC_ALL, "");
