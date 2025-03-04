@@ -31,7 +31,7 @@ public:
 
     // Конструктор копирования
     Human(const Human& other): idNumber(other.idNumber),lastName(other.lastName),firstName(other.firstName),middleName(other.middleName),birthDate(other.birthDate) {
-        ++countInstances;
+
     }
 
     // Деструктор 
